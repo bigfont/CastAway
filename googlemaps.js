@@ -12,8 +12,8 @@ function initialize() {
     var myLatLng, map, listener;
     myLatLng = new google.maps.LatLng(48.800000, -123.527862);
     map = new google.maps.Map(document.getElementById("map-canvas"));
-    addKmlToMap(map, 'kml1.kml');
-    addKmlToMap(map, 'kml2.kml');
+    addKmlToMap(map, 'kml10.kml');
+    addKmlToMap(map, 'kml20.kml');
     listener = google.maps.event.addListener(map, "idle", function () {
         map.setZoom(12);
         map.setCenter(myLatLng);
