@@ -14,8 +14,8 @@ function initialize() {
 
     var map = new google.maps.Map(document.getElementById("map-canvas"));
 
-    var activity1 = new google.maps.KmlLayer('http://castaway.azurewebsites.net/mapdata/activity_280222495.kml'); //-processed-v18
-    var activity2 = new google.maps.KmlLayer('http://castaway.azurewebsites.net/mapdata/activity_297019104.kml'); //-processed-v3
+    var activity1 = new google.maps.KmlLayer('http://castaway.azurewebsites.net/mapdata/activity_280222495-processed-v18.kml'); //
+    var activity2 = new google.maps.KmlLayer('http://castaway.azurewebsites.net/mapdata/activity_297019104-processed-v3.kml'); //
 
     activity1.setMap(map);
     activity2.setMap(map);
@@ -23,7 +23,7 @@ function initialize() {
     var listener = google.maps.event.addListener(map, "idle", function () {
         map.setZoom(12);
         map.setCenter(myLatLng);
-        map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+        map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
 
         google.maps.event.removeListener(listener);
     });
