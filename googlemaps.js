@@ -14,11 +14,8 @@ function initialize() {
 
     var rooturl = 'http://castaway.azurewebsites.net/mapdata/';
 
-    var kml1 = new google.maps.KmlLayer(rooturl + 'kml1.kml');
-    kml1.setMap(map);
-
-    //var kml2 = new google.maps.KmlLayer(rooturl + 'kml2.kml');
-    //kml2.setMap(map);
+    var kml2 = new google.maps.KmlLayer(rooturl + 'kml2-p.kml');
+    kml2.setMap(map);
 
     var listener = google.maps.event.addListener(map, "idle", function () {
         map.setZoom(12);
