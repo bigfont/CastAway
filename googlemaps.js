@@ -1,27 +1,23 @@
 ﻿
+
+function addKmlToMap(map, kmlFileName) {
+    var rooturl, kml;
+    rooturl = 'http://castaway.azurewebsites.net/mapdata/';
+    kml = new google.maps.KmlLayer(rooturl + kmlFileName);
+    kml.setMap(map);
+}
+
 function initialize() {
 
-
-    var myLatLng = new google.maps.LatLng(48.800000, -123.527862);
-
-
-    var mapOptions = {
-        center: myLatLng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    var map = new google.maps.Map(document.getElementById("map-canvas"));
-
-    var rooturl = 'http://castaway.azurewebsites.net/mapdata/';
-
-    var kml2 = new google.maps.KmlLayer(rooturl + 'kml2-p.kml');
-    kml2.setMap(map);
-
-    var listener = google.maps.event.addListener(map, "idle", function () {
+    var myLatLng, map, listener;
+    myLatLng = new google.maps.LatLng(48.800000, -123.527862);
+    map = new google.maps.Map(document.getElementById("map-canvas"));
+    addKmlToMap(map, 'kml1.kml');
+    addKmlToMap(map, 'kml2.kml');
+    listener = google.maps.event.addListener(map, "idle", function () {
         map.setZoom(12);
         map.setCenter(myLatLng);
         map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-
         google.maps.event.removeListener(listener);
     });
 }
