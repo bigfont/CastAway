@@ -1,6 +1,7 @@
 ﻿* {
     margin: 0;
     padding: 0;
+    font-family:Arial;
 }
 
 html {
@@ -9,7 +10,7 @@ html {
     with 0.5 inch margins on all sides.
     */
     height:100%;
-    max-height: 720pt; /* 10 inches * 72 pts/inch */
+    max-height: 700pt; /* 10 inches * 72 pts/inch */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -19,10 +20,10 @@ html {
 
 html > body > header > h1 {
     line-height:40pt;
-    font-size:40pt;
+    font-size:30pt;
 }
 
 html > body > #map-canvas {
-    height: 680pt;
+    height: 600pt;
     width: 100%;
 }
