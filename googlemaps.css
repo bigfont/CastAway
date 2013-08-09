@@ -1,13 +1,26 @@
-﻿html {
-    height: 100%;
-}
-
-body {
-    height: 100%;
+﻿* {
     margin: 0;
     padding: 0;
 }
 
-#map-canvas {
-    height: 100%;
+html {
+    /* 
+    Assume printing in portrait to an 8.5 x 11 inch page
+    with 0.5 inch margins on all sides.
+    */
+    height: 720pt; /* 10 inches * 72 pts/inch */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 540pt; /* 7.5 inches * 72 pts/inch */
+}
+
+html > body > header > h1 {
+    line-height:40pt;
+    font-size:40pt;
+}
+
+html > body > #map-canvas {
+    height: 680pt;
+    width: 100%;
 }
