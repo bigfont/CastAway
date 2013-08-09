@@ -8,11 +8,13 @@ html {
     Assume printing in portrait to an 8.5 x 11 inch page
     with 0.5 inch margins on all sides.
     */
-    height: 720pt; /* 10 inches * 72 pts/inch */
+    height:100%;
+    max-height: 720pt; /* 10 inches * 72 pts/inch */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 540pt; /* 7.5 inches * 72 pts/inch */
+    width:100%;
+    max-width: 540pt; /* 7.5 inches * 72 pts/inch */
 }
 
 html > body > header > h1 {
