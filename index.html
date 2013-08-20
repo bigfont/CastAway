@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cast Away Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+        }
+
+        html {
+            /* 
+            Assume printing in portrait to an 8.5 x 11 inch page
+            with 0.5 inch margins on all sides.
+            */
+            height: 100%;
+            max-height: 700pt; /* 10 inches * 72 pts/inch */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 100%;
+            max-width: 540pt; /* 7.5 inches * 72 pts/inch */
+        }
+
+        html > body > header > h1 {
+            line-height: 40pt;
+            font-size: 24pt;
+        }        
+
+        html > body > #map-canvas {
+            height: 600pt;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cast Away Race Map</h1>
+    </header>
+    <div id="map-canvas" />
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgvoNLiGh-UsiDLZHHD-FMljJNUIAMC7U&sensor=true"></script>
+    <script type="text/javascript">
+
+        /*global document: true, google: true, window: true */
+
+        (function () {
+            'use strict';
+
+            function addKmlToMap(map, kmlFileName) {
+                var kml;
+                kml = new google.maps.KmlLayer(kmlFileName);
+                kml.setMap(map);
+            }
+
+            function initialize() {
+                var map;
+                map = new google.maps.Map(document.getElementById("map-canvas"));
+                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+                // these are in DropBox for now, because serving from Azure lead to one of them not working at all.
+                addKmlToMap(map, 'https://dl.dropboxusercontent.com/u/17522409/mapdata/activity_combined-v2.kml');
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        }());
+
+
+
+    </script>
+</body>
+</html>
